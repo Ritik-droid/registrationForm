@@ -124,11 +124,11 @@ const Register = () => {
 
               <div className="links">
                 {" "}
-                <a onClick={handleLoginClick}>Sign In</a>
+                <a onClick={handleLoginClick} style={{cursor:"pointer"}}>Sign In</a>
               </div>
 
               <div className="inputBox">
-                <input type="submit" value="Login" />
+                <input type="submit" value="Login" onClick={handleLoginClick} />
               </div>
             </form>
           </div>

@@ -77,7 +77,7 @@ const LogIN = () => {
               <div class="links">
                 {" "}
                 <a href="#">Forgot Password</a>{" "}
-                <a onClick={handleLoginClick}>Signup</a>
+                <a onClick={handleLoginClick} style={{cursor:"pointer"}}>Signup</a>
               </div>
 
               <div class="inputBox">
