@@ -1,11 +1,13 @@
 import React from "react";
 import { useState } from "react";
+import axios from "axios";
 import "../App.css";
 import { useNavigate } from "react-router-dom";
 const Register = () => {
   const navigate = useNavigate();
   const handleLoginClick = () => {
-    navigate("/login");
+    console.log("prints something");
+    alert("send Data");
   };
   const [formData, setFormData] = useState({
     name: "",
@@ -23,6 +25,17 @@ const Register = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    try {
+      axios.post("http://localhost:5000/api/user", formData).then(() => {
+        navigate("/logIN");
+        // alert("send Data");
+        // }
+      });
+    } catch (error) {
+      alert(error);
+    }
+
     console.log(formData);
     setFormData({
       name: "",
@@ -124,11 +137,13 @@ const Register = () => {
 
               <div className="links">
                 {" "}
-                <a onClick={handleLoginClick} style={{cursor:"pointer"}}>Sign In</a>
+                <a onClick={handleLoginClick} style={{ cursor: "pointer" }}>
+                  Sign In
+                </a>
               </div>
 
               <div className="inputBox">
-                <input type="submit" value="Login" onClick={handleLoginClick} />
+                <input type="submit" value="Register" />
               </div>
             </form>
           </div>
