@@ -1,13 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 import axios from "axios";
 import "../App.css";
 import { useNavigate } from "react-router-dom";
 const Register = () => {
+
   const navigate = useNavigate();
   const handleLoginClick = () => {
-    console.log("prints something");
-    alert("send Data");
+    navigate("/logIN");
   };
   const [formData, setFormData] = useState({
     name: "",
