@@ -35,7 +35,7 @@ const LogIN = () => {
             navigate("/Home")
             alert("Login SuccessFul");
           } else {
-            alert("Invalid UserID or PassWord");
+            alert("Invalid UserID or Password");
           }
         });
     } catch (error) {
