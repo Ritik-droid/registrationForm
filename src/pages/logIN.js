@@ -28,13 +28,14 @@ const LogIN = () => {
 
     try {
       axios
-        .post("http://localhost:5000/api/user/login", formData)
-        alert("Something")
+        .post("http://localhost:5000/login", formData)
         .then((res) => {
+          console.log(res.data)
           if (res.data === "Success") {
-            alert("User Found");
+            navigate("/Home")
+            alert("Login SuccessFul");
           } else {
-            alert("User Not found");
+            alert("Invalid UserID or PassWord");
           }
         });
     } catch (error) {

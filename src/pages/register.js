@@ -25,12 +25,9 @@ const Register = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
     try {
       axios.post("http://localhost:5000/api/user", formData).then(() => {
         navigate("/logIN");
-        // alert("send Data");
-        // }
       });
     } catch (error) {
       alert(error);
